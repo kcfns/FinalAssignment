@@ -74,7 +74,8 @@ namespace FinalAssignment.Page
                     continue;
                 }
                 
-                staffService.AssignRequestToMechanic(choice);
+                //staffService.AssignRequestToMechanic(choice);
+                staffService.MakeServiceStatusInProgress(choice);
                 Console.WriteLine("Request is assigned to the mechanic successfully");
                 break;
             }

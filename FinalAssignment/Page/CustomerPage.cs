@@ -1,6 +1,4 @@
-﻿
-
-using FinalAssignment.BAL.Interface;
+﻿using FinalAssignment.BAL.Interface;
 using FinalAssignment.BAL.Service;
 using FinalAssignment.Shared.DTO;
 using FinalAssignment.Validation;
