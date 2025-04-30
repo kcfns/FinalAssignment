@@ -54,7 +54,7 @@ namespace FinalAssignment.DAL.Repository
 
         public decimal GetServiceFee()
         {
-            return _context.SystemSettings.First().ServiceFee;
+            return _context.SystemSettings.OrderByDescending(ss => ss.Id).FirstOrDefault().ServiceFee;
         }
 
         public ServiceParts GetServicePartsByPartNum(string PartNum)

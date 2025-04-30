@@ -11,11 +11,18 @@ namespace FinalAssignment.Page
         private readonly IStaffService staffService = new StaffService();
         public void ManageServiceRequests(int id)
         {
+            
+
+            IList<ServiceRequestsDTO> serviceRequestsDTOs = staffService.GetPendingServiceRequests();
+
+            if (!serviceRequestsDTOs.Any())
+            {
+                Console.WriteLine("No pending services available");
+                return;
+            }
             Console.WriteLine("All Pending requests :");
 
             ConsoleTable table = new("Id", "BikeId", "Request Date", "Service Type", "Status", "Remarks");
-
-            IList<ServiceRequestsDTO> serviceRequestsDTOs = staffService.GetPendingServiceRequests();
 
             foreach (ServiceRequestsDTO serviceRequestsDTO in serviceRequestsDTOs)
             {
